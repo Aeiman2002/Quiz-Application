@@ -1,12 +1,24 @@
+@font-face {
+    font-family: "Edu";
+    src: url(./Fonts/EduQLDBeginner-Regular.ttf);
+}
 *{
     margin: 0;
     padding: 0;
 }
-/* button{
+body{
+    font-family: "Edu";
+
+}
+button{
+    width: 140px !important;
     outline: none;
     border: none;
     padding: 8px;
     border: 2px solid #fa8072;
     background-color: #32045c;
     color: white;
-} */
+}
+#quizContainer{
+    transition: all ease-in 1s;
+}
