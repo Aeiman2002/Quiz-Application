@@ -5,12 +5,14 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Edu";
 }
 body{
     background-color: #fa8072a1 !important;
 }
 .mainContainer{
+    margin-bottom: 20px;
     background-color: #7848a4ca;
     color: white;
     border-radius: 30px;
@@ -24,7 +26,7 @@ button{
     border: 2px solid #fa8072;
     background-color: #32045c;
     color: white;
-    box-shadow: 0px 2px 0px 2px #00000087;
+    filter: drop-shadow( 5px 3px 4px #fa8072) ;
 }
 button:hover{
     background-color: white;
@@ -34,4 +36,60 @@ button:hover{
 }
 .disappear{
     display: none;
+}
+h1{
+    font-weight: 900 !important;
+}
+label{
+    padding: 8px;
+    margin: 5px;
+    border: 2px solid #570357;
+    border-radius: 20px;
+    background-color: #fa8072;
+    color: black;
+    width: 600px;
+    height: 50px;
+    font-size: 20px;
+}
+label:hover{
+    background-color: white;
+    color: #32045c;
+    position: relative;
+    transition: 0.4s all linear;
+    cursor: pointer;
+}
+.score{
+    height: 180px;
+    width: 180px;
+    text-align: center;
+    background-color: #400e6eca;
+    color: white;
+    border-radius: 80%;
+    filter: drop-shadow(5px 5px 10px #000000);
+}
+.score h2{
+    margin-top: 60px;
+    font-weight: 800 !important;
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 480px)  {
+    label{
+        padding: 8px;
+        margin: 5px;
+        border: 3px solid #570357;
+        border-radius: 20px;
+        background-color: #fa8072;
+        color: black;
+        width: 250px;
+        height: 60px;
+        font-size: 15px;
+    }   
+    label:hover{
+        background-color: white;
+        color: #32045c;
+        position: relative;
+        transition: 0.4s all linear;
+        cursor: pointer;
+    }
 }

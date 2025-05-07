@@ -100,28 +100,36 @@ let score = 0;
 // Creating Function with loop on button
 function nextQuestion() {
   if (quizQuestions.length == index) {
-    quizContainer.innerHTML = `${score} out of ${quizQuestions.length}`;
-    nextBtn.classList.remove("d-flex")
-    nextBtn.classList.add("disappear")
+    quizContainer.innerHTML = `<div class = "score">
+    <h2> Your score <br/> ${score} out of ${quizQuestions.length}</h2>
+    </div>`;
+    nextBtn.classList.remove("d-flex");
+    nextBtn.classList.add("disappear");
     Swal.fire({
-      title: "Hurray! Quiz Completed",
+      title: "Hurray! Quiz Completed - Score is here",
       showClass: {
         popup: `
-                animate__animated
-                animate__fadeInUp
-                animate__faster
-              `,
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        `
       },
       hideClass: {
         popup: `
-                animate__animated
-                animate__fadeOutDown
-                animate__faster
-                `,
-      },
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `
+      }
     });
   } else {
+    
     nextBtn.disabled = true;
+    Swal.fire({
+      title: "Good job!",
+      text: "Going to next Question!",
+      icon: "success",
+    });
     quizContainer.innerHTML = `<div>
         <h1>HTML Quiz</h1>
         <h1>Question # ${index + 1}</h1>

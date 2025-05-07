@@ -18,19 +18,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
         integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
     <div class="main">
         <img src="./Images/brian.png" class="container d-flex justify-content-center " alt="" style="width: 250px;">
-        <div class="mainContainer container w-75">
-            <div id="quizContainer" class="container d-flex justify-content-center pt-3">
+        <div class="mainContainer container">
+            <div id="quizContainer" class="container d-flex justify-content-center pt-lg-3">
             </div>
-            <div class="py-3">
+            <div class="py-2">
                 <div>
                     <audio src="./Audio/buttonSound.mp3" id="clickSound" preload="auto"></audio>
                 </div>
-                <button id="next-btn" class="container d-flex justify-content-center rounded-pill btn-sound" disabled>Next
+                <button id="next-btn" class="container d-flex justify-content-center rounded-pill btn-sound"
+                    disabled>Next
                     Question</button>
             </div>
         </div>
