@@ -112,18 +112,17 @@ function nextQuestion() {
           animate__animated
           animate__fadeInUp
           animate__faster
-        `
+        `,
       },
       hideClass: {
         popup: `
           animate__animated
           animate__fadeOutDown
           animate__faster
-        `
-      }
+        `,
+      },
     });
   } else {
-    
     nextBtn.disabled = true;
     Swal.fire({
       title: "Good job!",
@@ -173,7 +172,7 @@ function nextQuestion() {
     for (let i = 0; i < options.length; i++) {
       options[i].addEventListener("click", function () {
         nextBtn.disabled = false; //Button enable
-        function buttonClickSound(params) {
+        function buttonClickSound() {
           let clickSound = document.getElementById("clickSound");
           console.log(clickSound);
           clickSound.play();
@@ -187,14 +186,15 @@ function nextQuestion() {
     }
   }
 }
-
 nextQuestion();
+
 
 // Step 5
 // Checking correct answers
 
 let options = document.getElementsByName("options");
 nextBtn.addEventListener("click", function () {
+  clearInterval(timer);
   for (let i = 0; i < options.length; i++) {
     if (options[i].checked) {
       let currentAns = options[i].value;

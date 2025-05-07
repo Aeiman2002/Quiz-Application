@@ -2,23 +2,27 @@
     font-family: "Edu";
     src: url(./Fonts/EduQLDBeginner-Regular.ttf);
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Edu";
 }
-body{
+
+body {
     background-color: #fa8072a1 !important;
 }
-.mainContainer{
+
+.mainContainer {
     margin-bottom: 20px;
     background-color: #7848a4ca;
     color: white;
     border-radius: 30px;
     filter: drop-shadow(5px 5px 10px #000000);
 }
-button{
+
+button {
     width: 140px !important;
     outline: none;
     border: none;
@@ -26,21 +30,25 @@ button{
     border: 2px solid #fa8072;
     background-color: #32045c;
     color: white;
-    filter: drop-shadow( 5px 3px 4px #fa8072) ;
+    filter: drop-shadow(5px 3px 4px #fa8072);
 }
-button:hover{
+
+button:hover {
     background-color: white;
     color: #32045c;
     position: relative;
     transition: 0.4s all linear;
 }
-.disappear{
+
+.disappear {
     display: none;
 }
-h1{
+
+h1 {
     font-weight: 900 !important;
 }
-label{
+
+label {
     padding: 8px;
     margin: 5px;
     border: 2px solid #570357;
@@ -51,14 +59,16 @@ label{
     height: 50px;
     font-size: 20px;
 }
-label:hover{
+
+label:hover {
     background-color: white;
     color: #32045c;
     position: relative;
     transition: 0.4s all linear;
     cursor: pointer;
 }
-.score{
+
+.score {
     height: 180px;
     width: 180px;
     text-align: center;
@@ -67,14 +77,30 @@ label:hover{
     border-radius: 80%;
     filter: drop-shadow(5px 5px 10px #000000);
 }
-.score h2{
+
+.score h2 {
     margin-top: 60px;
     font-weight: 800 !important;
 }
 
+/* #timer{
+    margin-bottom: 20px;
+    background-color: #7848a4ca;
+    color: black;
+    border-radius: 30px;
+    filter: drop-shadow(5px 5px 10px #000000);
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 15px 0;
+    transition: color 0.3s;;
+} */
 
-@media screen and (min-width: 0px) and (max-width: 480px)  {
-    label{
+@media screen and (min-width: 0px) and (max-width: 480px) {
+    label {
         padding: 8px;
         margin: 5px;
         border: 3px solid #570357;
@@ -84,8 +110,9 @@ label:hover{
         width: 250px;
         height: 60px;
         font-size: 15px;
-    }   
-    label:hover{
+    }
+
+    label:hover {
         background-color: white;
         color: #32045c;
         position: relative;
