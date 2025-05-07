@@ -12,19 +12,19 @@ const quizQuestions = [
   },
   {
     ques: "Which HTML tag is used to define a hyperlink?",
-    opt1: "<href>",
-    opt2: "<hyperlink>",
-    opt3: "<a>",
-    opt4: "<link>",
-    correct: "<a>",
+    opt1: "href",
+    opt2: "hyperlink",
+    opt3: "a",
+    opt4: "link",
+    correct: "a",
   },
   {
     ques: "What is the correct HTML element for the largest heading?",
-    opt1: "<head>",
-    opt2: "<h1>",
-    opt3: "<heading>",
-    opt4: "<h6>",
-    correct: "<h1>",
+    opt1: "head",
+    opt2: "h1",
+    opt3: "heading",
+    opt4: "h6",
+    correct: "h1",
   },
   {
     ques: " Which attribute is used to specify an image's file path in the <img> tag?",
@@ -36,51 +36,51 @@ const quizQuestions = [
   },
   {
     ques: " Which HTML tag is used to insert a line break?",
-    opt1: "<lb>",
-    opt2: "<break>",
-    opt3: "<br>",
-    opt4: "<newline>",
-    correct: "<br>",
+    opt1: "lb",
+    opt2: "break",
+    opt3: "br",
+    opt4: "newline",
+    correct: "br",
   },
   {
     ques: "What is the correct HTML for adding a background color?",
-    opt1: "<body bg=green>",
-    opt2: "<body style=background-color: green;>",
-    opt3: "<background>green</background>",
-    opt4: "<body color=green>",
-    correct: "<body style=background-color: green;>",
+    opt1: "body bg=green",
+    opt2: "body style=background-color: green;",
+    opt3: "backgroundgreen/background",
+    opt4: "body color=green",
+    correct: "body style=background-color: green;",
   },
   {
     ques: "Which HTML tag is used to create an unordered (bulleted) list?",
-    opt1: "<ol>",
-    opt2: "<list>",
-    opt3: "<ul>",
-    opt4: "<li>",
-    correct: "<li>",
+    opt1: "ol",
+    opt2: "list",
+    opt3: "ul",
+    opt4: "li",
+    correct: "li",
   },
   {
     ques: "Which tag is used to define a table row in HTML?",
-    opt1: "<td>",
-    opt2: "<tr>",
-    opt3: "<th>",
-    opt4: "<table-row>",
-    correct: "<tr>",
+    opt1: "td",
+    opt2: "tr",
+    opt3: "th",
+    opt4: "table-row",
+    correct: "tr",
   },
   {
     ques: "What is the correct HTML for inserting an image?",
-    opt1: "<img src=image.jpg alt=My Image>",
-    opt2: "<image src=image.jpg>",
-    opt3: "<img href=image.jpg alt=My Image>",
-    opt4: "<picture src=image.jpg>",
-    correct: "<img src=image.jpg alt=My Image>",
+    opt1: "img src=image.jpg alt=My Image",
+    opt2: "image src=image.jpg",
+    opt3: "img href=image.jpg alt=My Image",
+    opt4: "picture src=image.jpg",
+    correct: "img src=image.jpg alt=My Image",
   },
   {
     ques: "Which HTML element is used to define the structure of an HTML document (contains <head> and <body>)?",
-    opt1: "<document>",
-    opt2: "<html>",
-    opt3: "<main>",
-    opt4: "<web>",
-    correct: "<html>",
+    opt1: "document",
+    opt2: "html",
+    opt3: "main",
+    opt4: "web",
+    correct: "html",
   },
 ];
 
@@ -99,49 +99,58 @@ let score = 0;
 // Step 3
 // Creating Function with loop on button
 function nextQuestion() {
-    if (quizQuestions.length == index) {
-        quizContainer.innerHTML = `${score} out of ${quizQuestions.length}`;
-        nextBtn.style.display = "none";
-        Swal.fire({
-            title: "Hurray! Quiz Completed",
-            showClass: {
-                popup: `
+  if (quizQuestions.length == index) {
+    quizContainer.innerHTML = `${score} out of ${quizQuestions.length}`;
+    nextBtn.classList.remove("d-flex")
+    nextBtn.classList.add("disappear")
+    Swal.fire({
+      title: "Hurray! Quiz Completed",
+      showClass: {
+        popup: `
                 animate__animated
                 animate__fadeInUp
                 animate__faster
               `,
-            },
-            hideClass: {
-                popup: `
+      },
+      hideClass: {
+        popup: `
                 animate__animated
                 animate__fadeOutDown
                 animate__faster
                 `,
-            },
+      },
     });
   } else {
     nextBtn.disabled = true;
-    quizContainer.innerHTML =`<div>
+    quizContainer.innerHTML = `<div>
         <h1>HTML Quiz</h1>
         <h1>Question # ${index + 1}</h1>
         <h3>${quizQuestions[index].ques}</h3>
         <label>
-        <input type = "radio" value = "${quizQuestions[index].opt1}" name = "options"/>
+        <input type = "radio" value = "${
+          quizQuestions[index].opt1
+        }" name = "options"/>
         <span>${quizQuestions[index].opt1}</span>
         </label>
         <br/>
         <label>
-        <input type = "radio" value = "${quizQuestions[index].opt2}" name = "options"/>
+        <input type = "radio" value = "${
+          quizQuestions[index].opt2
+        }" name = "options"/>
         <span>${quizQuestions[index].opt2}</span>
         </label>
         <br/>
         <label>
-        <input type = "radio" value = "${quizQuestions[index].opt3}" name = "options"/>
+        <input type = "radio" value = "${
+          quizQuestions[index].opt3
+        }" name = "options"/>
         <span>${quizQuestions[index].opt3}</span>
         </label>
         <br/>
         <label>
-        <input type = "radio" value = "${quizQuestions[index].opt4}" name = "options"/>
+        <input type = "radio" value = "${
+          quizQuestions[index].opt4
+        }" name = "options"/>
         <span>${quizQuestions[index].opt4}</span>
         </label>
         </div>`;
@@ -156,6 +165,16 @@ function nextQuestion() {
     for (let i = 0; i < options.length; i++) {
       options[i].addEventListener("click", function () {
         nextBtn.disabled = false; //Button enable
+        function buttonClickSound(params) {
+          let clickSound = document.getElementById("clickSound");
+          console.log(clickSound);
+          clickSound.play();
+        }
+        document.querySelectorAll(" .btn-sound").forEach((buttons) => {
+          buttons.addEventListener("click", function () {
+            buttonClickSound();
+          });
+        });
       });
     }
   }
@@ -163,22 +182,22 @@ function nextQuestion() {
 
 nextQuestion();
 
-// Step 5 
+// Step 5
 // Checking correct answers
 
-let options = document.getElementsByName("options")
-nextBtn.addEventListener("click" , function(){
-    for(let i = 0 ; i < options.length ; i++){
-        if(options[i].checked){
-            let currentAns = options[i].value;
-            let correctAns = quizQuestions[index].correct;
-            console.log("user Ans" , currentAns);
-            console.log("obj key ans" , correctAns);
-            if(currentAns == correctAns){
-                score++
-            }
-        }
+let options = document.getElementsByName("options");
+nextBtn.addEventListener("click", function () {
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].checked) {
+      let currentAns = options[i].value;
+      let correctAns = quizQuestions[index].correct;
+      console.log("user Ans", currentAns);
+      console.log("obj key ans", correctAns);
+      if (currentAns == correctAns) {
+        score++;
+      }
     }
-    index++;
-    nextQuestion()
+  }
+  index++;
+  nextQuestion();
 });
