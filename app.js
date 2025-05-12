@@ -1,3 +1,52 @@
+// Adding timer
+let timer;
+
+let timerLeft = 10;
+
+const timerEle = document.createElement("div");
+timerEle.id = "timer";
+timerEle.style.fontSize = "24px";
+timerEle.style.fontWeight = "bold";
+timerEle.style.margin = "20px 0";
+console.log(timerEle);
+const timerPlaceHolder = document.getElementById("placeholder-Timer");
+
+// Function for start timer
+
+function timerStart() {
+  clearInterval(timer);
+
+  timerLeft = 10;
+  updateTimer();
+
+  // Timer Start
+  timer = setInterval(() => {
+    timerLeft--;
+    updateTimer();
+
+    if (timerLeft === 5) {
+      timerStartAudio();
+    }
+
+    if (timerLeft === 0) {
+      clearInterval(timer);
+      timerEndsAudio();
+      nextBtn.click();
+    }
+  }, 1000);
+}
+
+// Timer start audio function
+function timerStartAudio() {
+  const timerStartAudio = new Audio("./Audio/timeStart.wav");
+  timerStartAudio.play();
+}
+
+// Timer start audio function
+function timerEndsAudio() {
+  const timerEndsAudio = new Audio("./Audio/timesUp.wav");
+}
+
 // Step 1
 // Objects in Array
 
@@ -162,6 +211,9 @@ function nextQuestion() {
         </label>
         </div>`;
 
+    timerPlaceHolder.appendChild(timerEle);
+    timerStart();
+
     // Step 4
     // Getting options value from <label name = "">
 
@@ -188,7 +240,6 @@ function nextQuestion() {
 }
 nextQuestion();
 
-
 // Step 5
 // Checking correct answers
 
@@ -209,3 +260,15 @@ nextBtn.addEventListener("click", function () {
   index++;
   nextQuestion();
 });
+
+// Function for update time
+function updateTimer() {
+  timerEle.textContent = `Time left: ${timerLeft}s`;
+
+  // Condition
+  // if (timerLeft <= 5) {
+  //   timerLeft.style.color = "red";
+  // } else {
+  //   timerLeft.style.color = "black";
+  // }
+}
