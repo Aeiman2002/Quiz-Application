@@ -26,22 +26,9 @@ function timerStart() {
 
     if (timerLeft === 0) {
       clearInterval(timer);
-      timerEndsAudio();
-      nextBtn.click();
     }
   }, 1000);
 }
-
-// Timer start audio function
-// function timerStartAudio() {
-//   const timerStartAudio = new Audio("./Audio/timeStart.wav");
-//   timerStartAudio.play();
-// }
-
-// // Timer start audio function
-// function timerEndsAudio() {
-//   const timerEndsAudio = new Audio("./Audio/timesUp.wav");
-// }
 
 // Step 1
 // Objects in Array
