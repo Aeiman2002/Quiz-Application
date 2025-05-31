@@ -83,21 +83,11 @@ label:hover {
     font-weight: 800 !important;
 }
 
-/* #timer{
-    margin-bottom: 20px;
-    background-color: #7848a4ca;
-    color: black;
-    border-radius: 30px;
-    filter: drop-shadow(5px 5px 10px #000000);
-    font-size: 24px;
-    font-weight: bold;
-    margin: 20px 0;
-    padding: 10px;
-    border-radius: 5px;
+#placeholder-Timer{
     text-align: center;
-    margin: 15px 0;
-    transition: color 0.3s;;
-} */
+    font-size: 32px;
+    font-weight: bold;
+}
 
 @media screen and (min-width: 0px) and (max-width: 480px) {
     label {
