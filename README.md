@@ -6,8 +6,8 @@ UI of Quiz Application 👀
 
 ✔ Features
 - ⏱️ Timed quiz mode for challenge seekers
-- - 🏆 Leaderboard to compare scores with other users
-  - - 🎨 Modern, responsive UI built with HTML, CSS, JavaScript
+- 🏆 Leaderboard to compare scores with other users
+- 🎨 Modern, responsive UI built with HTML, CSS, JavaScript
    
 ## Technologies Used
 
@@ -16,6 +16,6 @@ UI of Quiz Application 👀
 - **Build Tool**: HTML
 
 Contact
-Aeiman Fayyaz - aeimanfayyaz2002@gmail.com
-Project Link: https://aeiman-fayyaz.github.io/Quiz-Application/
-LinkedIn Profile: https://www.linkedin.com/in/aeiman-fayyaz-5a74281b1/
+- Aeiman Fayyaz - aeimanfayyaz2002@gmail.com |
+- Project Link: https://aeiman-fayyaz.github.io/Quiz-Application/ |
+- LinkedIn Profile: https://www.linkedin.com/in/aeiman-fayyaz-5a74281b1/ |
